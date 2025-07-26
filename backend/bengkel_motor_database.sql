@@ -1,4 +1,4 @@
-DROP DATABASE bengkel_motor_database;
+DROP DATABASE IF EXISTS bengkel_motor_database;
 CREATE DATABASE IF NOT EXISTS bengkel_motor_database;
 USE bengkel_motor_database;
 
