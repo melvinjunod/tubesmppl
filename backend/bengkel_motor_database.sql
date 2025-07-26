@@ -5,10 +5,10 @@ USE bengkel_motor_database;
 CREATE TABLE `pelanggan` (
   `id_pelanggan` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
   `nama` varchar(128) NOT NULL,
-  `no_hp` varchar(20) NOT NULL
+  `nohp` varchar(20) UNIQUE NOT NULL
 );
 
-INSERT INTO `pelanggan` (`nama`, `no_hp`) VALUES
+INSERT INTO `pelanggan` (`nama`, `nohp`) VALUES
 ('Acep', '08123456789'),
 ('Melvin', '08123456788');
 
@@ -43,52 +43,52 @@ INSERT INTO `kategori_kerusakan` (`nama_kategori`) VALUES
 CREATE TABLE `kerusakan` (
   `id_kerusakan` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
   `nama_kerusakan` varchar(64) NOT NULL,
-  `estimasi_biaya` int NOT NULL,
+  `estimasi_biaya` float NOT NULL,
   `id_kategori` int NOT NULL REFERENCES kategori_kerusakan(`id_kerusakan`),
-  `status` enum('tersedia','tersembunyi') NOT NULL
+  `status` enum('Tersedia','Tersembunyi') NOT NULL
 );
 
 INSERT INTO `kerusakan` (`nama_kerusakan`, `estimasi_biaya`, `id_kategori`, `status`) VALUES
-('Ganti oli mesin', 60000, 1, 'tersedia'),
-('Ganti oli gardan (motor matic)', 25000, 1, 'tersedia'),
-('Ganti busi', 35000, 1, 'tersedia'),
-('Ganti filter udara', 45000, 1, 'tersedia'),
-('Ganti aki', 250000, 1, 'tersedia'),
-('Servis karburator/injeksi', 120000, 1, 'tersedia'),
-('Ganti kampas kopling', 200000, 1, 'tersedia'),
-('Overhaul mesin (turun mesin)', 1500000, 1, 'tersedia'),
-('Ganti ban depan', 200000, 2, 'tersedia'),
-('Ganti ban belakang', 220000, 2, 'tersedia'),
-('Tambal ban', 15000, 2, 'tersedia'),
-('Ganti velg', 400000, 2, 'tersedia'),
-('Ganti shockbreaker depan', 300000, 2, 'tersedia'),
-('Ganti shockbreaker belakang', 350000, 2, 'tersedia'),
-('Setel roda', 30000, 2, 'tersedia'),
-('Ganti spion (1 buah)', 35000, 3, 'tersedia'),
-('Ganti bodi/sayap motor', 300000, 3, 'tersedia'),
-('Ganti jok/sadel', 120000, 3, 'tersedia'),
-('Cat ulang body motor', 800000, 3, 'tersedia'),
-('Poles body motor', 150000, 3, 'tersedia'),
-('Pasang box tambahan', 500000, 3, 'tersedia'),
-('Ganti kampas rem depan', 70000, 4, 'tersedia'),
-('Ganti kampas rem belakang', 70000, 4, 'tersedia'),
-('Ganti cakram rem', 250000, 4, 'tersedia'),
-('Ganti master rem', 200000, 4, 'tersedia'),
-('Setel rem', 15000, 4, 'tersedia'),
-('Ganti lampu depan', 45000, 5, 'tersedia'),
-('Ganti lampu belakang', 35000, 5, 'tersedia'),
-('Ganti lampu sein', 25000, 5, 'tersedia'),
-('Ganti klakson', 40000, 5, 'tersedia'),
-('Ganti kabel bodi', 300000, 5, 'tersedia'),
-('Perbaikan ECU/injeksi', 750000, 5, 'tersedia'),
-('Ganti rantai + gear set', 250000, 6, 'tersedia'),
-('Ganti V-belt (matic)', 180000, 6, 'tersedia'),
-('Ganti roller CVT', 120000, 6, 'tersedia'),
-('Ganti kampas ganda', 200000, 6, 'tersedia'),
-('Cuci motor', 25000, 7, 'tersedia'),
-('Anti karat', 150000, 7, 'tersedia'),
-('Service ringan', 100000, 7, 'tersedia'),
-('Service besar', 500000, 7, 'tersedia');
+('Ganti oli mesin', 60000, 1, 'Tersedia'),
+('Ganti oli gardan (motor matic)', 25000, 1, 'Tersedia'),
+('Ganti busi', 35000, 1, 'Tersedia'),
+('Ganti filter udara', 45000, 1, 'Tersedia'),
+('Ganti aki', 250000, 1, 'Tersedia'),
+('Servis karburator/injeksi', 120000, 1, 'Tersedia'),
+('Ganti kampas kopling', 200000, 1, 'Tersedia'),
+('Overhaul mesin (turun mesin)', 1500000, 1, 'Tersedia'),
+('Ganti ban depan', 200000, 2, 'Tersedia'),
+('Ganti ban belakang', 220000, 2, 'Tersedia'),
+('Tambal ban', 15000, 2, 'Tersedia'),
+('Ganti velg', 400000, 2, 'Tersedia'),
+('Ganti shockbreaker depan', 300000, 2, 'Tersedia'),
+('Ganti shockbreaker belakang', 350000, 2, 'Tersedia'),
+('Setel roda', 30000, 2, 'Tersedia'),
+('Ganti spion (1 buah)', 35000, 3, 'Tersedia'),
+('Ganti bodi/sayap motor', 300000, 3, 'Tersedia'),
+('Ganti jok/sadel', 120000, 3, 'Tersedia'),
+('Cat ulang body motor', 800000, 3, 'Tersedia'),
+('Poles body motor', 150000, 3, 'Tersedia'),
+('Pasang box tambahan', 500000, 3, 'Tersedia'),
+('Ganti kampas rem depan', 70000, 4, 'Tersedia'),
+('Ganti kampas rem belakang', 70000, 4, 'Tersedia'),
+('Ganti cakram rem', 250000, 4, 'Tersedia'),
+('Ganti master rem', 200000, 4, 'Tersedia'),
+('Setel rem', 15000, 4, 'Tersedia'),
+('Ganti lampu depan', 45000, 5, 'Tersedia'),
+('Ganti lampu belakang', 35000, 5, 'Tersedia'),
+('Ganti lampu sein', 25000, 5, 'Tersedia'),
+('Ganti klakson', 40000, 5, 'Tersedia'),
+('Ganti kabel bodi', 300000, 5, 'Tersedia'),
+('Perbaikan ECU/injeksi', 750000, 5, 'Tersedia'),
+('Ganti rantai + gear set', 250000, 6, 'Tersedia'),
+('Ganti V-belt (matic)', 180000, 6, 'Tersedia'),
+('Ganti roller CVT', 120000, 6, 'Tersedia'),
+('Ganti kampas ganda', 200000, 6, 'Tersedia'),
+('Cuci motor', 25000, 7, 'Tersedia'),
+('Anti karat', 150000, 7, 'Tersedia'),
+('Service ringan', 100000, 7, 'Tersedia'),
+('Service besar', 500000, 7, 'Tersedia');
 
 CREATE TABLE `antrian_kerusakan` (
   `id_antrian_kerusakan` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
