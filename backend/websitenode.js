@@ -21,9 +21,9 @@ app.use(cors());
 
 const con = mysql.createConnection({
     host: "localhost",
-    port: "3307",
-    user: "mppl_user",
-    password: "password_untuk_mppl",
+    port: "3306",
+    user: "root",
+    password: "",
     database: "bengkel_motor_database"
 });
 

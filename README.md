@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Tutorial utama bahasa Indonesia
+
+* Projek ini dibuat dengan NodeJS dan React, dua-duanya diperlukan untuk dapat menjalani projek ini
+* File SQL perlu dijalankan untuk membuat database
+* Informasi koneksi SQL untuk backend harus dikonfigurasi didalam file backend/websitenode.js baris 22
+* Backend websitenode.js dapat dijalankan menggunakan command terminal `node websitenode.js`
+* Frontend React dapat dijalankan menggunakan command terminal `npm start` di dalam folder utama
+
 ## Available Scripts
 
 In the project directory, you can run:
