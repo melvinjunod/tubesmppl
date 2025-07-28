@@ -230,7 +230,14 @@ function RegularAddQueue() {
                                 </tr>
                             </table>
                         </form>
-                        Total harga: Rp {totalPrice.toLocaleString("en")}
+                        <tr>
+  <td colSpan="3" className="total-harga-row">
+    <div className="total-harga">
+      Total Harga: <span>Rp {totalPrice.toLocaleString("id-ID")}</span>
+    </div>
+  </td>
+</tr>
+
                     </td>
                 </tr>
         </table>

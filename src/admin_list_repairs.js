@@ -52,11 +52,12 @@ function AdminListRepairs() {
 
     return(
         <>
-        
-        <div className="headertext">DATA KERUSAKAN
-            <button className="toprightnavbutton" onClick={goToQueueList} >DAFTAR ANTRIAN</button>
-            <button className="topleftnavbutton" onClick={goToAddRepairsData} >TAMBAH DATA</button>
-        </div>
+ <div className="headertext">
+  <div className="titletext">DATA KERUSAKAN</div>
+  <button className="toprightnavbutton" onClick={goToQueueList}>DAFTAR ANTRIAN</button>
+  <button className="topleftnavbutton" onClick={goToAddRepairsData}>TAMBAH DATA</button>
+</div>
+
         <div className={errorMessageClass}>{errorMessage}</div>
         <br></br>
         <table className="kitstable">

@@ -82,10 +82,12 @@ function AdminEditRepairs() {
 
     return(
         <>
-        <div className="headertext">EDIT DATA KERUSAKAN
-            <button className="toprightnavbutton" onClick={goToQueueList} >DATA ANTRIAN</button>
-            <button className="topleftnavbutton" onClick={goToRepairsList} >DATA KERUSAKAN</button>
-        </div>
+<div className="headertext">
+  <div className="titletext">EDIT DATA KERUSAKAN</div>
+  <button className="toprightnavbutton" onClick={goToQueueList}>DATA ANTRIAN</button>
+  <button className="topleftnavbutton" onClick={goToRepairsList}>DATA KERUSAKAN</button>
+</div>
+
         <div className="secondarytext"></div>
         <br></br>
         <form onSubmit={submitEditedRepairsData}>
@@ -102,7 +104,7 @@ function AdminEditRepairs() {
                 </tr>
                 <tr>
                     <td>KATEGORI KERUSAKAN</td>
-                    <select name="id_kerusakan" className="submitkitinput"
+                    <select name="id_kategori" className="submitkitinput"
                         value={repairsData.id_kategori} onChange={(e) => updateRepairsData(e)}>
                             {categoryList.map((categoryEntry) => {
                                 return(

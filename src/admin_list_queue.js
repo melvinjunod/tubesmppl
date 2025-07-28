@@ -77,11 +77,12 @@ function AdminListQueue() {
 
     return(
         <>
-        
-        <div className="headertext">DATA ANTRIAN
-            <button className="toprightnavbutton" onClick={goToHome} >MENU UTAMA</button>
-            <button className="topleftnavbutton" onClick={goToRepairsList} >DATA KERUSAKAN</button>
-        </div>
+    <div className="headertext">
+  <div className="titletext">DATA ANTRIAN</div>
+  <button className="toprightnavbutton" onClick={goToHome}>MENU UTAMA</button>
+  <button className="topleftnavbutton" onClick={goToRepairsList}>DATA KERUSAKAN</button>
+</div>
+
         <div className={errorMessageClass}>{errorMessage}</div>
         <br></br>
         <table className="kitstable">

@@ -1,619 +1,641 @@
-@font-face {
-    font-family:"TF2 Build";
-    src:url(tf2build.8181851a.woff2)
-    format("woff2"),
-    url(tf2build.34d0e9f4.woff)
-    format("woff");
-    font-display:swap
-}
-@font-face {
-    font-family:"TF2 Secondary";
-    src:url(tf2secondary.4bdc448e.woff2)
-    format("woff2"),
-    url(tf2secondary.9f3541ce.woff)
-    format("woff");
-    font-display:swap
-}
-a {
-    text-decoration: none;
-}
-.red_text {
-    color: #DD0000;
-}
+/* Loginpage.css */
+
 body {
-    background-color: #383530;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .loginbox {
+    background-color: rgba(0, 0, 50, 0.9);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 320px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
     text-align: center;
+    position: relative;
+  }
+  
+  .loginbox::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0a0a3a;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/149/149071.png');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 3px solid white;
+  }
+  
+  .usernameinput {
+    width: 85%;
+    padding: 12px 20px;
+    margin: 15px auto; 
+    display: block;
+    border: none;
+    border-radius: 8px;
+    background: #ecf0f1;
+    font-size: 1rem;
+    position: relative;
 }
-.loginbox {
-    width: 330px;
-    margin: auto;
-    padding: 8px 10px;
-    border-radius: 16px;
-    border: 4px solid #554d4a;
-    background-color: #292526;
-}
+/* Tambahan styling untuk halaman register */
+
 .headertext {
-    font-family: TF2 Build;
-    font-size: 32px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-top: -40px;  /* dinaikkan */
+    margin-bottom: 30px;
+  }  
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input.usernameinput {
+    width: 100%;           /* sepanjang .loginbox */
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: #ecf0f1;
+    font-size: 1rem;
+    box-sizing: border-box;
+    display: block;
+  }  
+  
+  input.usernameinput:focus {
+    outline: none;
+    border: 2px solid #6c5ce7;
+  }
+  
+  input.tf2button {
+    width: 85%;
+    max-width: 260px;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #2c3e50;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  input.tf2button:hover {
+    background-color: #1a252f;
+  }
+  
+  .subtextnoaccount, .subtextlogin {
+    font-size: 0.85rem;
+    color: #bdc3c7;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .subtextlogin a {
+    color: #dcd6ff;
+    text-decoration: none;
+  }
+  
+  .subtextlogin a:hover {
+    text-decoration: underline;
+  }
+  
+  .statusmessagered, .statusmessagegreen {
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 5px 0;
+  }
+  
+  .statusmessagered {
+    color: #e74c3c;
+  }
+  
+  .statusmessagegreen {
+    color: #2ecc71;
+  }
+  
+  .inputicon {
+    position: absolute;
+    left: 40px;
+    margin-top: 25px;
+    color: #888;
+  }
+  
+  .tf2button {
     width: 100%;
-    color: #fbf1d7;
-}
-.subtextnoaccount {
-    font-family: TF2 Secondary;
-    font-size: 20px;
-    color: #fbf1d7;
-    position: relative;
-    top: 24px;
-}
-.subtextlogin {
-    font-family: TF2 Secondary;
-    font-size: 20px;
-    position: relative;
-    top: 8px;
-    color: #5e98d9;
-}
-.statusmessagegreen {
-    font-family: TF2 Secondary;
-    font-size: 20px;
-    color: #1aff00;
-}
-.statusmessagered {
-    font-family: TF2 Secondary;
-    font-size: 20px;
-    color: #da0000;
-}
-.disclaimer {
-    position: relative;
-    top: 25vh;
-    text-align: center;
-    font-family: TF2 Secondary;
-    color: #fbf1d7;
-}
-.secondarytext {
-    font-family: TF2 Secondary;
-    font-size: 20px;
-    color: #fbf1d7;
-}
-.usernameinput {
-    font-family: TF2 Secondary;
-    color: #fbf1d7;
-    background-color: #332f2e;
-    border-radius: 4px;
-    font-size: 24px;
-    width: 310px;
-    height: 48px;
-    border: 4px solid #554d4a;
-}
-.passwordinput {
-    font-family: TF2 Secondary;
-    color: #fbf1d7;
-    background-color: #332f2e;
-    border-radius: 4px;
-    font-size: 24px;
-    width: 310px;
-    height: 48px;
-    border: 4px solid #554d4a;
-    position: relative;
-    margin-top: 4px;
-}
-.userpassinput:focus {
-    outline:1px solid #FFFFFF;
-}
-.tf2button {
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 12px;
-    font-size: 32px;
-    width: 192px;
-    height: 48px;
-    color: #fbf1d7;
-    line-height: 48px;
-    outline: none;
-    cursor: pointer;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #2c3e50;
     border: none;
-    text-decoration: none;
-    position: relative;
-    top: 10px;
-}
-.tf2button:hover {
-    background-color: #91493b;
-}
-.tf2buttondisabled {
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 12px;
-    font-size: 32px;
-    width: 192px;
-    height: 48px;
-    color: #302c29;
-    line-height: 48px;
-    outline: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: white;
     cursor: pointer;
-    border: none;
-    text-decoration: none;
-    position: relative;
-    top: 10px;
-    pointer-events: none;
-}
-.centeredtd {
+    transition: background-color 0.3s;
+  }
+  
+  .tf2button:hover {
+    background-color: #1a252f;
+  }
+  
+  .statusmessagered {
+    color: #e74c3c;
+    font-size: 0.9rem;
+  }
+  
+  .statusmessagegreen {
+    color: #2ecc71;
+    font-size: 0.9rem;
+  }
+  
+  .subtextnoaccount, .subtextlogin {
+    font-size: 0.85rem;
+    color: #bdc3c7;
+    margin-top: 10px;
+  }
+  
+  /* Header untuk halaman utama */
+.headertext {
     text-align: center;
-}
-.navigationtable {
-    width: 97.5%;
-    font-size: 16px;
-    margin: auto;
-    padding: 8px 0px 8px 0px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  /* Tabel navigasi */
+  .navigationtable {
+    margin: 0 auto;
+    background-color: rgba(0, 0, 50, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Tombol navigasi */
+  .navigationbutton {
+    width: 140px;
+    padding: 12px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .navigationbutton:hover {
+    background-color: #1a252f;
+    transform: scale(1.05);
+  }
+  
+  /* ================= Header dan Navigasi ================= */
 
-    border-radius: 16px;
-    border: 2px solid #eeebca;
-    background-color: #292526;
-    border-spacing: 0;
+.headertext {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .toprightnavbutton,
+  .topleftnavbutton {
+    position: absolute;
+    top: 10px;
+    padding: 8px 16px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toprightnavbutton {
+    right: 20px;
+  }
+  
+  .topleftnavbutton {
+    left: 20px;
+  }
+  
+  .toprightnavbutton:hover,
+  .topleftnavbutton:hover {
+    background-color: #1a252f;
+  }
+
+
+  /* =================== Submit Button & Status =================== */
+  
+  .submitkitbuttonwide {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitkitbuttonwide:hover {
+    background-color: #1e8449;
+  }
+  
+  .statusmessagered {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .statusmessagegreen {
+    color: #2ecc71;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .nomormejacontainer {
+    vertical-align: top;
+    width: 100%;
+  }
+  /* ================= Fix untuk Scroll dan Layout ================ */
+html, body {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    background-color: #8877d8;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* ================= Header Text & Tombol Navigasi ================ */
+  .headertext {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Tombol Navigasi */
+  .toprightnavbutton,
+  .topleftnavbutton {
+    position: relative;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    background-color: #1c7ed6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .toprightnavbutton:hover,
+  .topleftnavbutton:hover {
+    background-color: #1864ab;
+  }
+  
+  /* ================= Tabel Kerusakan ================ */
+  .kitstable {
+    width: 95%;
+    margin: 0 auto 4rem auto;
+    border-collapse: collapse;
+    color: white;
+    background-color: rgba(0, 0, 50, 0.7);
+    border-radius: 15px;
     overflow: hidden;
-    border-collapse: separate;
-}
-.kitstable {
-    width: 97.5%;
-    font-size: 16px;
-    margin: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .kitstable thead {
+    background-color: #1c2533;
+  }
+  
+  .kitstable th,
+  .kitstable td {
+    padding: 12px;
+    color: white;
+    text-align: left;
+    border-bottom: 1px solid #444;
+  }
+  
+  .kitstable tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* ================= Tombol Ubah Data ================ */
+  .changedatabutton {
+    padding: 6px 12px;
+    background-color: white;
+    color: #09002B;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .changedatabutton:hover {
+    background-color: #ddd;
+  }
+  
+  /* ================= Tombol SIMPAN ================ */
+  .submitkitbutton {
+    background-color: white;
+    color: #09002B;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 0.8rem 2.5rem;
+    margin: 2rem auto 0 auto;
+    display: block;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: background-color 0.3s;
+  }
+  
+  .submitkitbutton:hover {
+    background-color: #ccc;
+  }
+  
+  /* ================= Responsive Fix ================ */
+  @media screen and (max-width: 768px) {
+    .headertext {
+      font-size: 1.6rem;
+    }
+  
+    .toprightnavbutton,
+    .topleftnavbutton {
+      display: inline-block;
+      margin: 0.5rem;
+      width: auto;
+    }
+  
+    .kitstable {
+      font-size: 0.9rem;
+    }
+  }
+  .headertext {
+    position: relative;
+    padding: 2rem 1rem 3rem 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .headertext {
+    position: relative;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 1rem;
+  }
 
-    border-radius: 16px;
-    border: 2px solid #eeebca;
-    background-color: #292526;
-    border-spacing: 0;
-    overflow: hidden;
-    border-collapse: separate;
-}
-.kitstable th {
-    background-color: #2b2724;
-    font-family: TF2 Build;
-    font-size: 16px;
-    color: #c74c3c;
-}
-.kitstable tr:nth-child(odd) td {
-    background-color: #34302d;
-    font-family: TF2 Secondary;
-    color: #fbf1d7;
-}
-.kitstable tr:nth-child(even) td {
-    background-color: #2e2b24;
-    font-family: TF2 Secondary;
-    color: #fbf1d7;
-}
-.kitstable tr td:first-child {
-    font-family: TF2 Build;
-    color: #fcda00;
-}
+  
+  .topleftnavbutton {
+    left: 1rem;
+  }
+  
+  .toprightnavbutton {
+    right: 1rem;
+  }
+  
+  .topleftnavbutton:hover,
+  .toprightnavbutton:hover {
+    background-color: #1864ab;
+  }
+  .headercontainer {
+    position: relative;
+    padding: 20px 10px;
+    text-align: center;
+    background: linear-gradient(to right, #7b61ff, #8671f3);
+    color: white;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  
+  /* Judul tetap di tengah */
+  .headertext {
+    margin: 0;
+  }
 
+  
+  /* Tombol pojok kiri dan kanan */
+  .topleftnavbutton,
+  .toprightnavbutton {
+    position: absolute;
+    top: 90%;
+    transform: translateY(-50%);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: #2f80ed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .topleftnavbutton:hover,
+  .toprightnavbutton:hover {
+    background-color: #1366d6;
+  }
+  
+  .topleftnavbutton {
+    left: 20px;
+  }
+  
+  .toprightnavbutton {
+    right: 20px;
+  }
+  
+  /* Tabel form input */
+  .submitkittable {
+    margin: 30px auto;
+    border-collapse: separate;
+    border-spacing: 15px;
+    background-color: #1f1f1f;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .submitkittable td {
+    padding: 8px;
+    vertical-align: middle;
+  }
+  
+  /* Input field */
+  .submitkitinput,
+  .submitkitinputprice {
+    padding: 8px 12px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  /* Select styling */
+  .submitkittable select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  /* Tombol Simpan */
+  .submitkitbutton {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .submitkitbutton:hover {
+    background-color: #219653;
+  }
+  
+  /* Status message */
+  .statusmessagered {
+    color: red;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .statusmessagegreen {
+    color: green;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  /* General body scroll */
+  body {
+    overflow-y: auto;
+  }
+  
+  /* Optional: scroll fix for mobile */
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .total-harga {
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    padding: 20px 30px 30px 0;
+  }
+  
+  .total-harga span {
+    background-color: #2d2d6a;
+    padding: 8px 16px;
+    border-radius: 10px;
+    color: #00ffc8;
+    font-size: 1.2rem;
+    margin-left: 8px;
+    display: inline-block;
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+ /* WRAPPER TABEL UTAMA */
 .doubletablecontainer {
-    width: 97.5%;
-    margin: auto;
-}
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto 32px;
+  }
 
-.doubletablecontainer tr td {
-    vertical-align: text-top;
-}
-
-.kitstablehalf {
-    width: 48.75%;
-    font-size: 16px;
-
-    border-radius: 16px;
-    border: 2px solid #eeebca;
-    background-color: #292526;
-    border-spacing: 0;
-    overflow: hidden;
-    border-collapse: separate;
-}
-
-.kitstablehalf th {
-    background-color: #2b2724;
-    font-family: TF2 Build;
-    font-size: 16px;
-    color: #c74c3c;
-}
-.kitstablehalf tr:nth-child(odd) td {
-    background-color: #34302d;
-    font-family: TF2 Secondary;
-    color: #fbf1d7;
-}
-.kitstablehalf tr:nth-child(even) td {
-    background-color: #2e2b24;
-    font-family: TF2 Secondary;
-    color: #fbf1d7;
-}
-.kitstablehalf tr td:first-child {
-    font-family: TF2 Build;
-    color: #fcda00;
-}
-
-.menucontainer {
-    width: 97.5%;
-    position:fixed;
-    height: 57.5%;
-    overflow: scroll;
-    border-radius: 16px;
-    border: 2px solid #eeebca;
-}
-.menutable {
+  .doubletablecontainer td {
+    vertical-align:top;
+  }
+  
+  /* TABEL INDIVIDU */
+  .doubletablecontainer .kitstable {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+  
+  /* TABEL SERVIS DIPILIH LEBIH LEBAR */
+  .doubletablecontainer .kitstable.servis-dipilih {
+    flex: 1.2;
+    min-width: 350px;
+    max-width: 700px;
+  }
+  
+  /* BARIS KEDUA: FORM & TOTAL HARGA */
+  .nomormejacontainer {
     width: 100%;
-    font-size: 24px;
-    margin: auto;
-    /* border-radius: 16px;
-    border: 2px solid #eeebca; */
-    background-color: #292526;
-    border-spacing: 0;
-    border-collapse: separate;
-    
-}
-.fixedheaders {
-    position: fixed;
-}
-
-.nomormejacontainer {
-    font-family: TF2 Secondary;
-    font-size:32px;
-    color: #fbf1d7;
-    padding: 40px;
-}
-
-.nomormejacontainer tr td {
-    padding: 6px;
-    text-align: left;
-}
-
-.totalpricecontainer {
-    font-family: TF2 Secondary;
-    font-size:32px;
-    color: #fbf1d7;
-    position:absolute;
-    top:72%;
-    left:72%;
-}
-
-.totalpricecontainer tr td {
-    padding: 6px;
-    text-align: left;
-}
-
-.orderdetailscontainer {
-    font-family: TF2 Secondary;
-    font-size:20px;
-    color: #fbf1d7;
-    position:absolute;
-    top:71%;
-    right:3%;
-}
-
-.orderdetailscontainer tr td {
-    padding:5px;
-    text-align: right;
-}
-
-.menutable th {
-    background-color: #2b2724;
-    font-family: TF2 Build;
-    font-size: 16px;
-    color: #c74c3c;
-}
-.menutable tr:nth-child(odd) td {
-    background-color: #34302d;
-    font-family: TF2 Secondary;
-    color: #fbf1d7;
-}
-.menutable tr:nth-child(even) td {
-    background-color: #2e2b24;
-    font-family: TF2 Secondary;
-    color: #fbf1d7;
-}
-.menutable tr td:first-child {
-    font-family: TF2 Build;
-    color: #fcda00;
-}
-.menutable tr td:last-child {
-    font-family: TF2 Build;
-    font-size:40px;
-}
-.changedatabutton {
+    margin-top: 32px;
+  }
+  
+  .submitkittable {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .total-harga-row {
     text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 6px;
-    width:140px;
-    padding: 4px;
-    font-size: 16px;
-    color: #fbf1d7;
-    line-height: 12px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    position: relative;
-}
-.changedatabutton:hover {
-    background-color: #91493b;
-}
-.changedatabuttondisabled {
+    margin-top: 16px;
+  }
+  
+  .total-harga {
     text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 6px;
-    width:140px;
-    padding: 4px;
-    font-size: 16px;
-    color: #302c29;
-    line-height: 12px;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    position: relative;
-}
-.plusminusbutton {
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 6px;
-    width:40px;
-    height:40px;
-    padding: 4px;
-    font-size: 32px;
-    margin-left:8px;
-    margin-right:8px;
-    color: #fbf1d7;
-    line-height: 12px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    position: relative;
-}
-.plusminusbuttondisabled {
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 6px;
-    width:40px;
-    height:40px;
-    padding: 4px;
-    font-size: 32px;
-    margin-left:8px;
-    margin-right:8px;
-    color: #302c29;
-    line-height: 12px;
-    outline: none;
-    border: none;
-    text-decoration: none;
-    position: relative;
-}
-.plusminusbutton:hover {
-    background-color: #91493b;
-}
-.tf2buttonsmall {
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 6px;
-    width:60px;
-    padding: 4px;
-    font-size: 16px;
-    color: #fbf1d7;
-    line-height: 12px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    position: relative;
-}
-.tf2buttonsmall:hover {
-    background-color: #91493b;
-}
-.tf2buttonsmalldisabled {
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 6px;
-    width:60px;
-    padding: 4px;
-    font-size: 16px;
-    color: #302c29;
-    line-height: 12px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    position: relative;
-    pointer-events: none;
-}
-.submitkittable {
-    text-align: left;
-    width: 512px;
-    font-size: 16px;
-    margin: auto;
-    
-    font-family: TF2 Build;
-    color: #c74c3c;
-    border-radius: 16px;
-    border: 2px solid #eeebca;
-
-    border-spacing: 0;
-    overflow: hidden;
-    border-collapse: separate;
-}
-.submitkittable tr:nth-child(odd) td {
-    background-color: #34302d;
-    padding: 1px 0 1px 10px;
-}
-.submitkittable tr:nth-child(even) td {
-    background-color: #2e2b24;
-    padding: 1px 0 1px 10px;
-}
-.submitkittable tr td:last-child {
-    color: #fcda00;
-    text-align: right;
-    padding: 1px 10px 1px 10px;
-}
-.submitkittable tr:last-child {
-    text-align: center;
-    height: 75px;
-}
-.submitkittable tr:last-child td {
-    padding: 6px 10px 10px 10px;
-}
-.submitkitbutton {
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 12px;
-    font-size: 32px;
-    width: 192px;
-    height: 48px;
-    color: #fbf1d7;
-    line-height: 48px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    position: relative;
-}
-.submitkitbutton:hover {
-    background-color: #91493b;
-}
-.submitkitbuttonwide {
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 12px;
-    font-size: 32px;
-    width: 512px;
-    height: 48px;
-    color: #fbf1d7;
-    line-height: 48px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    position: relative;
-}
-.submitkitbuttonwide:hover {
-    background-color: #91493b;
-}
-.navigationbutton {
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 12px;
-    font-size: 32px;
-    width: 320px;
-    height: 48px;
-    color: #fbf1d7;
-    line-height: 48px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-    position: relative;
-}
-.navigationbutton:hover {
-    background-color: #91493b;
-}
-.submitkitinput {
-    background-color: #000000;
-    font-size: 16px;
-    color: #fbf1d7;
-    font-family: TF2 Secondary;
-    border-radius: 1px;
-    width: 300px;
-    border: 2px solid #eeebca;
-}
-.submitkitinputprice {
-    background-color: #000000;
-    font-size: 16px;
-    color: #fcda00;
-    font-family: TF2 Build;
-    border-radius: 1px;
-    width: 270px;
-    border: 2px solid #eeebca;
-}
-.toprightnavbutton {
-    position: absolute;
-    right: 16px;
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 12px;
-    font-size: 32px;
-    width: 320px;
-    height: 48px;
-    color: #fbf1d7;
-    line-height: 48px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-}
-.toprightnavbutton:hover {
-    background-color: #91493b;
-}
-.topleftnavbutton {
-    position: absolute;
-    left: 16px;
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 12px;
-    font-size: 32px;
-    width: 320px;
-    height: 48px;
-    color: #fbf1d7;
-    line-height: 48px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-}
-.topleftnavbutton:hover {
-    background-color: #91493b;
-}
-.bottomrightnavbutton {
-    position: absolute;
-    right: 32px;
-    bottom: 32px;
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 12px;
-    font-size: 32px;
-    width: 300px;
-    height: 48px;
-    color: #fbf1d7;
-    line-height: 48px;
-    outline: none;
-    cursor: pointer;
-    border: none;
-    text-decoration: none;
-}
-.bottomrightnavbutton:hover {
-    background-color: #91493b;
-}
-.bottomrightnavbuttondisabled {
-    position: absolute;
-    right: 32px;
-    bottom: 32px;
-    text-align: center;
-    font-family: TF2 Build;
-    background-color: #776b5f;
-    border-radius: 12px;
-    font-size: 32px;
-    width: 300px;
-    height: 48px;
-    color: #302c29;
-    line-height: 48px;
-    outline: none;
-    border: none;
-    text-decoration: none;
-}
-.orderCount {
-    width: 48px;
-    display: inline;
-}
+  }
+  
